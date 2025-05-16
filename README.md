@@ -1,29 +1,31 @@
 # devcontainer-jupyter-latex
 
-## はじめに
+## Overview
 
-このリポジトリは、AIを活用してコーディングを行ったプログラミング初学者の学生が作成しました。  
-また、dockerコンテナ内での動作確認や開発作業を簡単にするため、`ARG PASSWORD=password` のように非常に単純なパスワードを設定しています(セキュリティレベルは低いため、本番環境や外部公開には絶対に使わないでください)。  
-本リポジトリおよび付随するソースコード・設定ファイル等の利用によって生じた損害や問題について、作成者は一切責任を負いません。ご利用は自己責任でお願いします。
+このリポジトリは、AIを活用してコーディングを行ったプログラミング初学者の学生が作成した、Jupyter Notebook・LaTeX・Markdown/Marp 環境をDevcontainer上で簡単に構築できるテンプレートです。  
+`jupyter/datascience-notebook:x86_64-ubuntu-22.04` イメージをベースにしており、**x86_64アーキテクチャ専用**です（**armアーキテクチャ(Apple Silicon等)非対応**）。  
+Dockerfileでビルドするとイメージサイズは約20GBです（2025/5現在）。  
+本リポジトリおよび付随するソースコード・設定ファイル等の利用によって生じた損害や問題について、作成者は一切責任を負いません。ご利用は自己責任でお願いします。  
+また、`ARG PASSWORD=password` のように非常に単純なパスワードを設定しています（セキュリティレベルは低いため、本番環境や外部公開には絶対に使わないでください）。
 
-`jupyter/datascience-notebook:x86_64-ubuntu-22.04` イメージをベースにしているため、**x86_64アーキテクチャ専用**です。**armアーキテクチャ(Apple Siliconなど)では動作しません**のでご注意ください。
+## Requirement
 
-Dockerfileでビルドするとイメージサイズは約20GBです(2025/5現在)。
+- [Docker](https://www.docker.com/)（x86_64アーキテクチャ対応）
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) または [Cursor](https://www.cursor.com/ja/)
+- [Dev Containers拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
-## 前提環境
+## Usage
 
-利用には以下の環境が必要です。
+1. 本リポジトリをクローンします。
+2. VS Code (または Cursor) でリポジトリを開き、「Dev Containerで再開」または「Dev Containerで開く」を選択します。
+3. 自動的に必要なDockerイメージのビルド・起動が行われ、Jupyter/LaTeX/Markdown/Marp環境が利用可能になります。
 
-- [Docker](https://www.docker.com/)(x86_64アーキテクチャ対応)がインストールされていること
-- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) または [Cursor](https://www.cursor.com/ja/) エディタがインストールされていること
-- [Dev Containers拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)がインストールされていること
+## Features
 
-## 目的
-
-- Devcontainerで以下の環境を構築
-  - Jupyter Notebook 環境を VS Code (Cursor) から利用
-  - LaTeX 執筆環境
-  - Markdown・Marp 執筆環境 
+自分のPC（ローカル環境）に余計なソフトや設定を追加せず、Devcontainerで以下の環境を構築
+- Jupyter Notebook 環境を VS Code (Cursor) から利用
+- LaTeX 執筆環境（フォーマッタとかは未導入、とりあえずビルドが通る程度）
+- Markdown・Marp 執筆環境 
 
 ## ディレクトリ階層構造
 ```
@@ -293,3 +295,10 @@ nbconvert
 openai
 pyppeteer
 ```
+## Reference
+
+https://zenn.dev/secondselection/articles/how_to_devcontainer
+
+https://github.com/SoRA-X7/latex-devcontainer-termpaper
+
+https://github.com/tom1999-303/beamerlike-template
