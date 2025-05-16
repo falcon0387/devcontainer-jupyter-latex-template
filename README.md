@@ -1,4 +1,4 @@
-# devcontainer-jupyter-latex
+# devcontainer-jupyter-latex-template
 
 ## Overview
 
