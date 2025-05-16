@@ -2,11 +2,13 @@
 
 ## Overview
 
-このリポジトリは、AIを活用してコーディングを行ったプログラミング初学者の学生が作成した、Jupyter Notebook・LaTeX・Markdown/Marp 環境をDevcontainer上で簡単に構築できるテンプレートです。  
+Jupyter Notebook・LaTeX・Markdown/Marp 環境をDevcontainer上で簡単に構築できるテンプレート。  
 `jupyter/datascience-notebook:x86_64-ubuntu-22.04` イメージをベースにしており、**x86_64アーキテクチャ専用**です（**armアーキテクチャ(Apple Silicon等)非対応**）。  
 Dockerfileでビルドするとイメージサイズは約20GBです（2025/5現在）。  
 本リポジトリおよび付随するソースコード・設定ファイル等の利用によって生じた損害や問題について、作成者は一切責任を負いません。ご利用は自己責任でお願いします。  
 また、`ARG PASSWORD=password` のように非常に単純なパスワードを設定しています（セキュリティレベルは低いため、本番環境や外部公開には絶対に使わないでください）。
+
+> AI（主にClaude 3.7 Sonnetモデル）を活用してコーディングを行ったプログラミング初学者の学生によって作成されています。
 
 ## Requirement
 
