@@ -1,0 +1,80 @@
+{
+  "name": "jupyter-latex",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "jupyter-latex",
+  "workspaceFolder": "/home/jovyan/work",
+  "remoteUser": "jovyan",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Python, Jupyter Notebook
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        // LaTeX
+        "james-yu.latex-workshop",
+        // Markdown
+        "shd101wyy.markdown-preview-enhanced",
+        // Mermaid
+        "bierner.markdown-mermaid",
+        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+        "corschenzi.mermaid-graphical-editor",
+        // Marp
+        "marp-team.marp-vscode"
+      ],
+      "settings": {
+        // Editor settings
+        "editor.tabSize": 2,
+        "workbench.colorTheme": "Default Dark Modern",
+        
+        // Python, Jupyter Notebook
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "python.analysis.extraPaths": [
+          "/home/jovyan/work/src/mylib"
+        ],
+
+        // LaTeX
+        "latex-workshop.latex.outDir": "output",
+        "latex-workshop.latex.autoBuild.run": "onSave",
+
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "lualatex",
+            "tools": [
+              "lualatex"
+            ]
+          }
+        ],
+
+        "latex-workshop.latex.tools": [
+          {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+              "--cmdx",
+              "-file-line-error",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-halt-on-error",
+              "-output-directory=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+          }
+        ],
+
+        // Markdown Preview Enhanced
+        "markdown-preview-enhanced.chromePath": "/usr/bin/google-chrome-stable",
+        "markdown-preview-enhanced.enableScriptExecution": true,
+        "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
+        
+        // Marp
+        "markdown.marp.browserPath": "/usr/bin/google-chrome-stable",
+        "markdown.marp.html": "all",
+        "markdown.marp.themes": [
+          ".vscode/marp/latex_beamer_style.css"
+        ]
+      }
+    }
+  }
+}
