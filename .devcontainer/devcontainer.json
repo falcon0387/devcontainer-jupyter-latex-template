@@ -1,0 +1,131 @@
+{
+    "name": "jupyter-latex",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "jupyter-latex",
+    "workspaceFolder": "/home/jovyan/work",
+    "remoteUser": "jovyan",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          // Common
+          "ics.japanese-proofreading",
+          // Python, Jupyter Notebook
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "ms-toolsai.jupyter",
+          // LaTeX
+          "james-yu.latex-workshop",
+          // Markdown
+          "yzhang.markdown-all-in-one",
+          "davidanson.vscode-markdownlint",
+          "shd101wyy.markdown-preview-enhanced",
+          "yzane.markdown-pdf",
+          // Mermaid
+          "bierner.markdown-mermaid",
+          "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+          "corschenzi.mermaid-graphical-editor",
+          // Marp
+          "marp-team.marp-vscode"
+        ],
+        "settings": {
+          // Editor settings
+          "editor.tabSize": 2,
+          "workbench.colorTheme": "Default Dark Modern",
+          "editor.renderWhitespace": "all",
+          "files.insertFinalNewline": true,
+          "files.autoSave": "afterDelay",
+          "files.autoSaveDelay": 1000,
+          "workbench.colorCustomizations": {
+            "editorIndentGuide.background1": "#b22222",
+            "editorIndentGuide.background2": "#ff4500",
+            "editorIndentGuide.background3": "#ffd700",
+            "editorIndentGuide.background4": "#228b22",
+            "editorIndentGuide.background5": "#000080",
+            "editorIndentGuide.background6": "#8b008b",
+            "editorIndentGuide.activeBackground1": "#fff",
+            "editorIndentGuide.activeBackground2": "#fff",
+            "editorIndentGuide.activeBackground3": "#fff",
+            "editorIndentGuide.activeBackground4": "#fff",
+            "editorIndentGuide.activeBackground5": "#fff",
+            "editorIndentGuide.activeBackground6": "#fff"
+          },
+          
+          // markdown settings
+          "[markdown]": {
+            "editor.wordWrap":"on",
+            "editor.wordSeparators": "./\\()\"'-:,.;<>~!@# ○$%^&*|+=[]{}`~?．。，、（）「」［］｛｝《》てにをはがのともへでや",
+            "editor.quickSuggestions": {
+              "other": true,
+              "comments": false,
+              "strings": false
+            },
+            "editor.snippetSuggestions": "top",
+            "editor.scrollBeyondLastLine": false,
+            "editor.padding.bottom": 250
+          },
+
+          // Common
+          "japanese-proofreading.textlint.丸かっこ（）": false,
+          
+          // Python, Jupyter Notebook
+          "python.defaultInterpreterPath": "/opt/conda/bin/python",
+          "python.analysis.extraPaths": [
+            "/home/jovyan/work/src/mylib"
+          ],
+  
+          // LaTeX
+          "latex-workshop.latex.outDir": "output",
+          "latex-workshop.latex.autoBuild.run": "onSave",
+  
+          "latex-workshop.latex.recipes": [
+            {
+              "name": "lualatex",
+              "tools": [
+                "lualatex"
+              ]
+            }
+          ],
+  
+          "latex-workshop.latex.tools": [
+            {
+              "name": "lualatex",
+              "command": "lualatex",
+              "args": [
+                "--cmdx",
+                "-file-line-error",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-halt-on-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+              ],
+              "env": {}
+            }
+          ],
+
+          // Markdown Preview Enhanced
+          "markdown-preview-enhanced.chromePath": "/usr/bin/google-chrome-stable",
+          "markdown-preview-enhanced.breakOnSingleNewLine": true,
+          "markdown-preview-enhanced.scrollSync": false,
+          "markdown-preview-enhanced.mathRenderingOption": "MathJax",
+          "markdown-preview-enhanced.enableScriptExecution": true,
+          "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
+          "markdown-preview-enhanced.puppeteerWaitForTimeout": 3000,
+          
+          // markdownlint
+          "markdownlint.config": {
+            "MD024": false,
+            "MD040": false,
+            "MD041": false
+          },
+
+          // Marp
+          "markdown.marp.browserPath": "/usr/bin/google-chrome-stable",
+          "markdown.marp.html": "all",
+          "markdown.marp.themes": [
+            ".vscode/marp/latex_beamer_style.css"
+          ]
+        }
+      }
+    }
+}

@@ -1,0 +1,5 @@
+dotenv
+japanize_matplotlib
+nbconvert
+openai
+pyppeteer

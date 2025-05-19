@@ -1,0 +1,13 @@
+services:
+  jupyter-latex:
+    image: jupyter-latex:1.0
+    container_name: jupyter-latex
+    environment:
+      - TZ=Asia/Tokyo
+      - PYTHONPATH=/home/jovyan/work/src:${PYTHONPATH}
+    build: ./jupyter
+    working_dir: /home/jovyan/work
+    volumes:
+      - ../jupyter:/home/jovyan/work
+    stdin_open: true
+    tty: true

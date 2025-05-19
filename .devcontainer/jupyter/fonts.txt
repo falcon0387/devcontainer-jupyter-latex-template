@@ -1,0 +1,14 @@
+# 日本語フォント
+fonts-noto-cjk
+# Notoフォント
+fonts-noto
+# 絵文字フォント
+fonts-noto-color-emoji
+# フリーフォント
+fonts-freefont-ttf
+# IPAゴシックフォント
+fonts-ipafont-gothic
+# IPA明朝フォント
+fonts-ipafont-mincho
+# M+フォント
+fonts-mplus
